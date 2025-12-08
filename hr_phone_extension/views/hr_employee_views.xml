@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Inherit Employee Form View to add Extension fields -->
+    <record id="view_employee_form_inherit_extension" model="ir.ui.view">
+        <field name="name">hr.employee.form.inherit.extension</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='work_phone']" position="after">
+                <field name="extension_id" 
+                       context="{
+                           'default_department_id': department_id,
+                           'default_from_employee_id': id
+                       }"/>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- Add Extension to Employee List View -->
+    <record id="view_employee_tree_inherit_extension" model="ir.ui.view">
+        <field name="name">hr.employee.list.inherit.extension</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='work_phone']" position="after">
+                <field name="extension_number" optional="hide"/>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- Add Extension to Employee Search View -->
+    <record id="view_employee_search_inherit_extension" model="ir.ui.view">
+        <field name="name">hr.employee.search.inherit.extension</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_filter"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='job_id']" position="after">
+                <field name="extension_number" string="Extension"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
