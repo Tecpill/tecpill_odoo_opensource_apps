@@ -1,5 +1,0 @@
-id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_phone_extension_all,phone.extension.all,model_phone_extension,base.group_system,1,1,1,1
-access_phone_extension_hr_manager,phone.extension.hr.manager,model_phone_extension,hr.group_hr_manager,1,1,1,0
-access_phone_extension_hr_officer,phone.extension.hr.officer,model_phone_extension,hr.group_hr_user,1,0,0,0
-access_phone_extension_employee,phone.extension.employee,model_phone_extension,base.group_user,1,0,0,0
