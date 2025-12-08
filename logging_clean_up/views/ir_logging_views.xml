@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Extend ir.logging list view to add Clean Now button -->
+    <record id="view_ir_logging_list_inherit" model="ir.ui.view">
+        <field name="name">ir.logging.list.inherit</field>
+        <field name="model">ir.logging</field>
+        <field name="inherit_id" ref="base.ir_logging_tree_view"/>
+        <field name="arch" type="xml">
+            <!-- Add Clean Now button in the list header -->
+            <xpath expr="//list" position="inside">
+                <header>
+                    <button name="action_clean_logs_now" 
+                            string="Run Cleanup (Per Settings)" 
+                            type="object" 
+                            class="btn-primary"
+                            icon="fa-trash"/>
+                </header>
+            </xpath>
+        </field>
+    </record>
+    
+    <!-- Add optional filters for ir.logging -->
+    <record id="view_ir_logging_search_inherit" model="ir.ui.view">
+        <field name="name">ir.logging.search.inherit</field>
+        <field name="model">ir.logging</field>
+        <field name="inherit_id" ref="base.ir_logging_search_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//search" position="inside">
+                <filter string="Today" name="today" domain="[('create_date', '&gt;=', datetime.datetime.combine(context_today(), datetime.time(0,0,0)))]"/>
+                <filter string="Last 7 Days" name="last_7_days" domain="[('create_date', '&gt;=', (context_today() - datetime.timedelta(days=7)).strftime('%Y-%m-%d'))]"/>
+                <filter string="Last 30 Days" name="last_30_days" domain="[('create_date', '&gt;=', (context_today() - datetime.timedelta(days=30)).strftime('%Y-%m-%d'))]"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
