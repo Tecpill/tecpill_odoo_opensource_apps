@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Tree View -->
+    <record id="view_phone_extension_tree" model="ir.ui.view">
+        <field name="name">phone.extension.tree</field>
+        <field name="model">phone.extension</field>
+        <field name="arch" type="xml">
+            <list string="Phone Extensions">
+                <field name="number"/>
+                <field name="department_id"/>
+                <field name="active" invisible="1"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Form View -->
+    <record id="view_phone_extension_form" model="ir.ui.view">
+        <field name="name">phone.extension.form</field>
+        <field name="model">phone.extension</field>
+        <field name="arch" type="xml">
+            <form string="Phone Extension">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="number"/>
+                            <field name="department_id"/>
+                        </group>
+                        <group>
+                            <field name="notes" placeholder="IT notes, troubleshooting information, etc."/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Assigned Employees" name="employees">
+                            <field name="employee_ids" widget="many2many" mode="kanban">
+                                <kanban>
+                                    <field name="id"/>
+                                    <field name="name"/>
+                                    <field name="avatar_128"/>
+                                    <templates>
+                                        <t t-name="card">
+                                            <div class="d-flex align-items-center">
+                                                <img t-att-src="record.avatar_128.value ? 'data:image/png;base64,' + record.avatar_128.value : '/web/static/img/placeholder.png'"
+                                                     class="o_kanban_image o_image_64_cover me-3" alt="Avatar"/>
+                                                <div class="flex-grow-1">
+                                                    <strong><field name="name"/></strong>
+                                                </div>
+                                            </div>
+                                        </t>
+                                    </templates>
+                                </kanban>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <!-- Search View -->
+    <record id="view_phone_extension_search" model="ir.ui.view">
+        <field name="name">phone.extension.search</field>
+        <field name="model">phone.extension</field>
+        <field name="arch" type="xml">
+            <search string="Phone Extensions">
+                <field name="number"/>
+                <field name="department_id"/>
+                <filter string="Archived" name="inactive" domain="[('active', '=', False)]"/>
+            </search>
+        </field>
+    </record>
+
+    <!-- Action -->
+    <record id="action_phone_extension" model="ir.actions.act_window">
+        <field name="name">Phone Extensions</field>
+        <field name="res_model">phone.extension</field>
+        <field name="view_mode">list,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a phone extension
+            </p>
+            <p>
+                Manage all company internal phone extensions here. You can assign extensions to employees and departments.
+            </p>
+        </field>
+    </record>
+
+    <!-- Server Action: Assign Department -->
+    <record id="server_action_assign_department" model="ir.actions.server">
+        <field name="name">Assign Department</field>
+        <field name="model_id" ref="model_phone_extension"/>
+        <field name="binding_model_id" ref="model_phone_extension"/>
+        <field name="binding_type">action</field>
+        <field name="binding_view_types">list,form</field>
+        <field name="state">code</field>
+        <field name="code">for record in records:
+    if record.employee_ids:
+        # Collect all unique department IDs from linked employees
+        dept_ids = set(record.employee_ids.mapped('department_id').ids)
+        if len(dept_ids) == 1:
+            # All employees share the same department → assign it safely
+            record.write({'department_id': list(dept_ids)[0]})
+        else:
+            # Employees belong to different departments → clear department
+            record.write({'department_id': False})
+    else:
+        # No employees assigned → clear department
+        record.write({'department_id': False})
+        </field>
+    </record>
+</odoo>
