@@ -1,0 +1,9 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 📧 Email Support
+    url: mailto:admin@tecpill.com
+    about: Contact us via email for support questions
+  - name: 🌐 Website
+    url: https://tecpill.com/
+    about: Visit our website for more information
+
