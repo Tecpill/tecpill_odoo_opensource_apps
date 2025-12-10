@@ -36,6 +36,10 @@
             "base_setup",
         ],
 
+    'images': [
+    'static/description/banner.png',
+    ],
+
     # always loaded
     'data': [
             "security/ir.model.access.csv",
