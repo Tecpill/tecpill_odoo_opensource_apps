@@ -33,6 +33,10 @@ Scope: Only 3 missing smart buttons, leveraging existing sale_stock relationship
     # Dependencies - including sale_stock for existing functionality
     'depends': ['sale_stock'],  # This already includes base, sale, stock, account
 
+    'images': [
+    'static/description/banner.png',
+    ],
+
     # always loaded
     'data': [
         'security/ir.model.access.csv',
