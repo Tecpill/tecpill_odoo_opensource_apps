@@ -1,0 +1,202 @@
+<section class="oe_container">
+    <div class="oe_row oe_spaced" style="width: 100%; margin: 0 auto 30px; text-align: center;">
+        <img src="banner.png" alt="Pickings Invoices Shortcuts Banner" style="width: 100%; height: auto;"/>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row oe_spaced" style="width: 75%; margin: 10px auto 30px; text-align: center;">
+        <img src="TecPillLogo.png" alt="Technology Pill Business Solution Logo" style="width: 50%; height: auto;"/>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row oe_spaced" style="width: 75%; margin: 10px auto 30px; text-align: center;">
+        <h1 style="color: rgba(7,26,41,1); font-family: Montserrat; font-weight: Bold; font-size: 48px;">Pickings Invoices Shortcuts</h1>
+        <p style="color: rgba(112,112,112,1); font-family: Montserrat; font-weight: Medium; font-size: 24px; margin: 10px 0 40px;">Smart button navigation between Stock Pickings and Invoices in Odoo 18 - Adding only the truly missing navigation links.</p>
+        <div style="padding: 18px; background-color: #e8f5e9; border-radius: 10px; margin: 0 auto 30px; max-width: 900px;">
+            <h3 style="color: #2c3e50; font-size: 22px; margin-bottom: 10px;">💡 What Makes This Module Special</h3>
+            <ul style="list-style-type: disc; padding-left: 30px; text-align: left; font-size: 18px; color: #155724;">
+                <li>Adds only the 3 truly missing smart buttons - everything else already exists in Odoo!</li>
+                <li>Non-invasive design that works alongside existing Odoo functionality.</li>
+                <li>Performance optimized using existing relationships and computed fields.</li>
+                <li>Perfect UI consistency with Odoo core smart button patterns.</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row oe_spaced" style="width: 75%; margin: 0 auto 20px;">
+        <h2 style="width: 100%; color: rgba(7,26,41,1); font-family: Montserrat; font-weight: Medium; font-size: 32px; margin-bottom: 15px;">Key Features</h2>
+        
+        <div style="padding: 20px; background-color: #f8f9fa; border-radius: 10px; margin-bottom: 20px;">
+            <h3 style="color: #2c3e50; font-size: 20px; margin-bottom: 15px;">🔗 Smart Button Navigation</h3>
+            <ul style="list-style-type: none; padding-left: 20px;">
+                <li style="margin-bottom: 10px;">✓ Stock Picking → Sale Order (smart button upgrade from existing field)</li>
+                <li style="margin-bottom: 10px;">✓ Stock Picking → Invoices (new functionality via sale order)</li>
+                <li style="margin-bottom: 10px;">✓ Invoice → Deliveries (new functionality via sale orders)</li>
+                <li style="margin-bottom: 10px;">✓ Round-trip navigation works in all directions</li>
+            </ul>
+        </div>
+
+        <div style="padding: 20px; background-color: #f8f9fa; border-radius: 10px; margin-bottom: 20px;">
+            <h3 style="color: #2c3e50; font-size: 20px; margin-bottom: 15px;">⚡ Performance & Architecture</h3>
+            <ul style="list-style-type: none; padding-left: 20px;">
+                <li style="margin-bottom: 10px;">✓ Leverages existing relationships from sale_stock module</li>
+                <li style="margin-bottom: 10px;">✓ Minimal additional database queries</li>
+                <li style="margin-bottom: 10px;">✓ Proper @api.depends declarations for computed fields</li>
+                <li style="margin-bottom: 10px;">✓ No data migration required</li>
+            </ul>
+        </div>
+
+        <div style="padding: 20px; background-color: #f8f9fa; border-radius: 10px; margin-bottom: 20px;">
+            <h3 style="color: #2c3e50; font-size: 20px; margin-bottom: 15px;">🎯 Smart Button Behavior</h3>
+            <ul style="list-style-type: none; padding-left: 20px;">
+                <li style="margin-bottom: 10px;">✓ Buttons only show when there are related records (count > 0)</li>
+                <li style="margin-bottom: 10px;">✓ Single record: Opens form view directly</li>
+                <li style="margin-bottom: 10px;">✓ Multiple records: Opens list view with domain filter</li>
+                <li style="margin-bottom: 10px;">✓ Invoice buttons only appear on customer invoices/refunds</li>
+                <li style="margin-bottom: 10px;">✓ Graceful handling when relationships don't exist</li>
+            </ul>
+        </div>
+
+        <div style="padding: 20px; background-color: #f8f9fa; border-radius: 10px; margin-bottom: 20px;">
+            <h3 style="color: #2c3e50; font-size: 20px; margin-bottom: 15px;">🛡️ Non-Invasive Design</h3>
+            <ul style="list-style-type: none; padding-left: 20px;">
+                <li style="margin-bottom: 10px;">✓ Extends existing functionality without replacing it</li>
+                <li style="margin-bottom: 10px;">✓ Works alongside sale_stock module features</li>
+                <li style="margin-bottom: 10px;">✓ Same icons and styling as existing buttons</li>
+                <li style="margin-bottom: 10px;">✓ Compatible with other sale/stock extensions</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row oe_spaced" style="width: 75%; margin: 0 auto 20px;">
+        <h2 style="width: 100%; color: rgba(7,26,41,1); font-family: Montserrat; font-weight: Medium; font-size: 32px; margin-bottom: 15px;">What Already Exists vs What This Module Adds</h2>
+        
+        <div style="padding: 20px; background-color: #d4edda; border-left: 5px solid #28a745; margin-bottom: 20px;">
+            <h3 style="color: #155724; font-size: 20px; margin-bottom: 15px;">✅ Already Exists in Odoo Core</h3>
+            <ul style="color: #155724; margin-top: 10px; margin-bottom: 0;">
+                <li>Sale Order → Invoices (smart button) - sale module</li>
+                <li>Sale Order → Deliveries (smart button) - sale_stock module</li>
+                <li>Stock Picking → Sale Order (regular field sale_id) - sale_stock module</li>
+                <li>Invoice → Sale Order (smart button) - sale module</li>
+            </ul>
+        </div>
+
+        <div style="padding: 20px; background-color: #cce5ff; border-left: 5px solid #007bff; margin-bottom: 20px;">
+            <h3 style="color: #004085; font-size: 20px; margin-bottom: 15px;">🆕 What This Module Adds</h3>
+            <ul style="color: #004085; margin-top: 10px; margin-bottom: 0;">
+                <li><strong>Stock Picking Form:</strong> Sale Order smart button (upgrades existing field to proper smart button UX)</li>
+                <li><strong>Stock Picking Form:</strong> Invoices smart button (shows count and links to related invoices)</li>
+                <li><strong>Invoice Form:</strong> Deliveries smart button (shows count and links to related pickings)</li>
+            </ul>
+        </div>
+        
+        <p style="width: 100%; color: rgba(112,112,112,1); font-family: Montserrat; font-weight: Medium; font-size: 18px;">
+            After careful audit, we discovered that most functionality already exists in Odoo - this module adds just the 3 missing smart buttons for complete navigation workflow.
+        </p>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row oe_spaced" style="width: 75%; margin: 0 auto 20px;">
+        <h2 style="width: 100%; color: rgba(7,26,41,1); font-family: Montserrat; font-weight: Medium; font-size: 32px; margin-bottom: 15px;">Installation Notes</h2>
+        
+        <div style="padding: 20px; background-color: #f8f9fa; border-radius: 10px; margin-bottom: 20px;">
+            <h3 style="color: #2c3e50; font-size: 20px; margin-bottom: 15px;">📋 Requirements</h3>
+            <ul style="list-style-type: none; padding-left: 20px;">
+                <li style="margin-bottom: 10px;">✓ Odoo 18.0+ required</li>
+                <li style="margin-bottom: 10px;">✓ sale_stock module dependency (usually already installed)</li>
+                <li style="margin-bottom: 10px;">✓ Automatically includes: base, sale, stock, account modules</li>
+                <li style="margin-bottom: 10px;">✓ No additional configuration needed</li>
+            </ul>
+        </div>
+
+        <div style="padding: 20px; background-color: #d4edda; border-left: 5px solid #28a745; margin-bottom: 20px;">
+            <p style="margin: 0; color: #155724; font-size: 18px;">
+                <strong>✅ Simple Installation:</strong>
+            </p>
+            <ol style="color: #155724; margin-top: 10px; margin-bottom: 0; padding-left: 20px;">
+                <li>Place module in addons directory</li>
+                <li>Update app list</li>
+                <li>Install "Pickings Invoices Shortcuts" module</li>
+                <li>Dependencies are automatically handled</li>
+            </ol>
+        </div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row oe_spaced" style="width: 75%; margin: 0 auto 20px;">
+        <h2 style="width: 100%; color: rgba(7,26,41,1); font-family: Montserrat; font-weight: Medium; font-size: 32px; margin-bottom: 15px;">Example Workflow</h2>
+        <div style="padding-left: 40px;">
+            <h3 style="color: rgba(7,26,41,1); margin-top: 20px; font-size: 22px;">Complete Navigation Flow</h3>
+            <ol style="margin-top: 10px; font-size: 18px;">
+                <li><strong>Sale Order</strong> → Confirm → <strong>Delivery</strong> created → <strong>Invoice</strong> created</li>
+                <li><strong>From Delivery</strong>: Smart buttons to view <strong>Sale Order</strong> ↔ <strong>Invoices</strong></li>
+                <li><strong>From Invoice</strong>: Smart buttons to view <strong>Sale Orders</strong> (existing) ↔ <strong>Deliveries</strong> (new)</li>
+                <li><strong>Round-trip navigation</strong> works in all directions</li>
+            </ol>
+            
+            <h3 style="color: rgba(7,26,41,1); margin-top: 30px; font-size: 22px;">Smart Button Behavior</h3>
+            <ul style="margin-top: 10px; font-size: 18px;">
+                <li><strong>Visibility</strong>: Buttons only show when there are related records (count > 0)</li>
+                <li><strong>Single Record</strong>: Opens form view directly for seamless navigation</li>
+                <li><strong>Multiple Records</strong>: Opens filtered list view to show all related items</li>
+                <li><strong>Customer Focus</strong>: Invoice buttons only appear on customer invoices/refunds</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row oe_spaced" style="width: 75%; margin: 0 auto 20px;">
+        <h2 style="width: 100%; color: rgba(7,26,41,1); font-family: Montserrat; font-weight: Medium; font-size: 32px; margin-bottom: 15px;">Technical Implementation</h2>
+        
+        <div style="padding: 20px; background-color: #f8f9fa; border-radius: 10px; margin-bottom: 20px;">
+            <h3 style="color: #2c3e50; font-size: 20px; margin-bottom: 15px;">🏗️ Architecture</h3>
+            <ul style="list-style-type: none; padding-left: 20px;">
+                <li style="margin-bottom: 10px;">✓ <strong>Stock Picking Extensions</strong>: invoice_count, invoice_ids fields + action_view_invoice() method</li>
+                <li style="margin-bottom: 10px;">✓ <strong>Account Move Extensions</strong>: picking_count, picking_ids fields + action_view_picking() method</li>
+                <li style="margin-bottom: 10px;">✓ <strong>Relationship Strategy</strong>: Leverages existing sale_stock relationships</li>
+                <li style="margin-bottom: 10px;">✓ <strong>Performance</strong>: Uses sale_id.invoice_ids and sale order picking_ids</li>
+            </ul>
+        </div>
+        
+        <div style="padding: 20px; background-color: #fff3cd; border-left: 5px solid #ffc107; margin-bottom: 20px;">
+            <p style="margin: 0; color: #856404; font-size: 18px;">
+                <strong>🎯 Scope Focus:</strong> This module deliberately excludes functionality that already exists in Odoo core, focusing only on the missing navigation links.
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row oe_spaced" style="width: 75%; margin: 0 auto 20px;">
+        <h2 style="width: 100%; color: rgba(7,26,41,1); font-family: Montserrat; font-weight: Medium; font-size: 32px; margin-bottom: 15px;">Support</h2>
+        <p style="color: rgba(112,112,112,1); font-family: Montserrat; font-weight: Medium; font-size: 18px;">
+            For support and assistance, contact us at <a href="mailto:admin@tecpill.com">admin@tecpill.com</a>
+        </p>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row oe_spaced" style="width: 75%; margin: 0 auto 20px;">
+        <h2 style="width: 100%; color: rgba(7,26,41,1); font-family: Montserrat; font-weight: Medium; font-size: 32px; margin-bottom: 15px;">Credits</h2>
+        <div style="width: 100%; color: rgba(112,112,112,1); font-family: Montserrat; font-weight: Medium; font-size: 18px; margin-bottom: 50px;">
+            <div><strong>Authors: 
+            <div style="margin-left: 84px;">Sayed Mohamed Ebrahim</div>
+            <div style="margin-left: 84px;">Technology Pill Business Solution</div>
+        </div>
+    </div>
+
+    <section class="oe_container">
+        <div class="oe_row oe_spaced" style="width: 75%; margin: 0 auto 20px;">
+            <img src="TecPillFooter.png" style="width: 350px; height: auto; margin: 15px 0 0; display: block;" alt="Company Logo"/>
+        </div>
+    </section>
+</section>
