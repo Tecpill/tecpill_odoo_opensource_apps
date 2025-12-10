@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    
+    <!-- Inherit stock picking form view to add missing smart buttons -->
+    <record id="view_picking_form_missing_smart_buttons" model="ir.ui.view">
+        <field name="name">stock.picking.form.missing.smart.buttons</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="stock.view_picking_form"/>
+        <field name="arch" type="xml">
+            <!-- Add missing smart buttons in the button box -->
+            <div name="button_box" position="inside">
+                <!-- Sale Order Smart Button (upgrade existing sale_id field to smart button) -->
+                <button name="action_view_sale_order"
+                    type="object"
+                    class="oe_stat_button"
+                    icon="fa-usd"
+                    invisible="not sale_id">
+                    <div class="o_stat_info">
+                        <span class="o_stat_text">Sale Order</span>
+                    </div>
+                </button>
+                
+                <!-- Invoice Smart Button (new functionality) -->
+                <button name="action_view_invoice"
+                    type="object"
+                    class="oe_stat_button"
+                    icon="fa-pencil-square-o"
+                    invisible="invoice_count == 0">
+                    <field name="invoice_count" widget="statinfo" string="Invoices"/>
+                </button>
+            </div>
+        </field>
+    </record>
+
+</odoo> 
