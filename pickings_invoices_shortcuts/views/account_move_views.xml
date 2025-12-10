@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    
+    <!-- Inherit account move form view to add missing picking smart button -->
+    <record id="view_move_form_picking_smart_button" model="ir.ui.view">
+        <field name="name">account.move.form.picking.smart.button</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_move_form"/>
+        <field name="arch" type="xml">
+            <!-- Add missing picking smart button -->
+            <div name="button_box" position="inside">
+                <!-- Picking Smart Button (new functionality) -->
+                <button name="action_view_picking"
+                    type="object"
+                    class="oe_stat_button"
+                    icon="fa-truck"
+                    invisible="picking_count == 0 or move_type not in ('out_invoice', 'out_refund')">
+                    <field name="picking_count" widget="statinfo" string="Deliveries"/>
+                </button>
+            </div>
+        </field>
+    </record>
+
+</odoo> 
