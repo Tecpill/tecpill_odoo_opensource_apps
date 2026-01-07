@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Add Digital Signatures to base user form (for admin/user management views) -->
+    <record id="res_users_view_form_sign_profile" model="ir.ui.view">
+        <field name="name">res.users.form.sign.profile</field>
+        <field name="model">res.users</field>
+        <field name="inherit_id" ref="base.view_users_form"/>
+        <field name="arch" type="xml">
+            <!-- Add Digital Signatures group in the Preferences page -->
+            <xpath expr="//page[@name='preferences']" position="inside">
+                <group string="Digital Signatures" name="sign" groups="base.group_user" context="{'user_sign_profile_only': True}">
+                    <field name="sign_signature" widget="signature" options="{'full_name': 'display_name', 'size': ['',200]}"/>
+                    <field name="sign_initials" widget="signature" options="{'size': [200,'']}"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+</odoo>
