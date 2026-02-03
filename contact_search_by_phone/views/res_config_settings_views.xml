@@ -1,0 +1,37 @@
+<odoo>
+    <data>
+        <!-- Add Phone Search Settings to Sales Settings -->
+        <record id="res_config_settings_view_form_inherit" model="ir.ui.view">
+            <field name="name">res.config.settings.view.form.inherit.phone.search</field>
+            <field name="model">res.config.settings</field>
+            <field name="inherit_id" ref="sale.res_config_settings_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//block[@name='quotation_order_setting_container']" position="after">
+                    <block title="Contact Phone Search" id="contact_phone_search">
+                        <setting id="enforce_unique_phones_setting" help="Prevent duplicate phone numbers across contacts">
+                            <field name="enforce_unique_phones"/>
+                            <label for="enforce_unique_phones"/>
+                        </setting>
+                        <setting id="show_phone_in_search_setting" help="Show phone numbers in contact search results">
+                            <field name="show_phone_in_search"/>
+                            <label for="show_phone_in_search"/>
+                        </setting>
+                        <setting id="strip_leading_zero_setting" help="If enabled: 0551234567 → 551234567. If disabled: keeps leading zero. 00 prefix is always removed.">
+                            <field name="strip_leading_zero"/>
+                            <label for="strip_leading_zero"/>
+                        </setting>
+                        <setting id="min_digits_setting" title="Minimum number of digits to trigger phone search" help="Set how many digits are required before phone search is activated">
+                            <label for="min_digits_for_phone_search" string="Minimum Digits for Phone Search"/>
+                            <div class="text-muted">
+                                Number of digits required to trigger phone number search
+                            </div>
+                            <div class="content-group mt16">
+                                <field name="min_digits_for_phone_search"/>
+                            </div>
+                        </setting>
+                    </block>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
