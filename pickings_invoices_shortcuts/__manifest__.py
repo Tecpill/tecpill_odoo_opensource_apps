@@ -23,7 +23,7 @@ This module adds only the truly missing smart button navigation:
 Scope: Only 3 missing smart buttons, leveraging existing sale_stock relationships.
     """,
 
-    'author': 'Sayed Mohammed Aqeel Ebrahim, Technology Pill Business Solution',
+    'author': 'Technology Pill Business Solution, Sayed Mohammed Aqeel Ebrahim',
     'website': "https://www.Tecpill.com",
     'license': 'LGPL-3',
 
