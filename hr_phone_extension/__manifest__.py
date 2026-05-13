@@ -18,7 +18,7 @@
         * Ready for future VOIP integration
     """,
 
-    'author': "Technology Pill Business Solution",
+    'author': "Technology Pill Business Solution, Sayed Mohammed Aqeel Ebrahim",
     'maintainer': "Technology Pill Business Solution",
     'website': "https://www.tecpill.com/",
     'support': "admin@tecpill.com",
