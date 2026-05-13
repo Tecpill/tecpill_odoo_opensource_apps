@@ -19,7 +19,7 @@
         * Cross-field uniqueness (phone vs mobile)
         * Configurable settings in General Settings
     """,
-    'author': " Technology Pill Business Solution",
+    'author': " Technology Pill Business Solution, Sayed Mohammed Aqeel Ebrahim",
     'maintainer': "Sayed Ameen",
     'website': "https://www.tecpill.com",
     'category': 'Contact Management',
